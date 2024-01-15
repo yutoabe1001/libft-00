@@ -6,7 +6,7 @@
 /*   By: yabe <yabe@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:39:18 by yabe              #+#    #+#             */
-/*   Updated: 2024/01/13 17:05:18 by yabe             ###   ########.fr       */
+/*   Updated: 2024/01/14 21:34:48 by yabe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
+	if (dstsize == 0)
+		return (ft_strlen(src));
 	while (dstsize > 1 && *src != '\0')
 	{
 		*dst++ = *src++;
 		dstsize--;
 		i++;
 	}
-	if (dstsize > 0)
-		*dst = '\0';
+	*dst = '\0';
 	while (*src != '\0')
 	{
 		src++;
